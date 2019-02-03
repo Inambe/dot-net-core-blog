@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PostModel>
+
+<div class="col-md-12">
+    <h1>Manage Posts</h1>
+    <table class="table table-bordered bg-light text-dark">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created</th>
+                <th>Last Updated</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <span>No post yet.</span>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var post in Model)
+                {
+                    <tr>
+                        <td>@post.Title</td>
+                        <td>@post.CreatedAt.ToString()</td>
+                        <td>@post.UpdatedAt.ToString()</td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" asp-action="Edit" asp-controller="Post" asp-route-id="@post.Id">Update</a>
+                        </td>
+                        <td>
+                            <form asp-action="Delete" asp-route-id="@post.Id" method="post">
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

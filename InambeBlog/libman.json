@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.2.1",
+      "destination": "wwwroot/libs/twitter-bootstrap/"
+    },
+    {
+      "library": "jquery@3.3.1",
+      "destination": "wwwroot/libs/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js",
+      "destination": "wwwroot/libs/ckeditor/"
+    }
+  ]
+}

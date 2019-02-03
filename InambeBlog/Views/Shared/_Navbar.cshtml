@@ -1,0 +1,48 @@
+﻿<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+    <a class="navbar-brand" href="/">Inambe</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Index" asp-controller="Post">Posts</a>
+            </li>
+        </ul>
+        <form
+              method="get"
+                class="form-inline"
+                asp-action="Index"
+                asp-controller="Post">
+
+            <input
+                   class="form-control mr-2"
+                   name="query"
+                   type="search"
+                   placeholder="Search Posts"
+                   value="@ViewBag.Query" />
+
+            <button
+                    class="btn btn-success"
+                    type="submit">
+                Search
+            </button>
+        </form>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form class="form-inline ml-5" method="post" asp-action="SignOut" asp-controller="Account">
+                <a class="btn btn-warning" asp-action="Create" asp-controller="Post">Create Post</a>
+                <a class="btn btn-warning ml-1" asp-action="Manage" asp-controller="Post">Manage Posts</a>
+                <button class="btn btn-danger ml-1" type="submit">Logout</button>
+            </form>
+        }
+        else
+        {
+            <div class="form-inline ml-5">
+                <a class="btn btn-danger" asp-action="SignIn" asp-controller="Account">Sign In</a>
+            </div>
+        }
+    </div>
+</nav>

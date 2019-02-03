@@ -1,0 +1,24 @@
+﻿@model PostModel
+
+<div class="col-md-6 my-2">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title m-0">
+                <a asp-action="Details" asp-route-id="@Model.Id">@Model.Title</a>
+            </h5>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">
+                Auther : @Model.AuthorUser.Name
+            </small>
+            -
+            <small class="text-muted">
+                Created On : @Convert.ToDateTime(Model.CreatedAt).ToString(Constants.DateFormat)
+            </small>
+            -
+            <small class="text-muted">
+                Updated On : @Convert.ToDateTime(Model.UpdatedAt).ToString(Constants.DateFormat)
+            </small>
+        </div>
+    </div>
+</div>

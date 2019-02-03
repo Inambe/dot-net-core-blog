@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/custom-bt.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <partial name="_Navbar">
+
+    <div class="container my-2">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/libs/jquery/jquery.min.js"></script>
+    <script src="~/libs/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/libs/ckeditor/ckeditor.js"></script>
+    <script src="~/js/main.js"></script>
+    @RenderSection("scripts", required:false)
+</body>
+</html>

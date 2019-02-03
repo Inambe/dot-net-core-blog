@@ -1,0 +1,25 @@
+﻿@model ClaimsPrincipal
+<div class="col-md-4">
+    <div class="card">
+        <div class="p-3">
+            @if (Model.Identity.IsAuthenticated)
+            {
+                <h3>Hi, @Model.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value .</h3>
+                <form asp-controller="Account" asp-action="SignOut" method="post">
+                    <button class="btn btn-danger btn-sm" type="submit">Sign Out</button>
+                </form>
+            }
+            else
+            {
+                <div class="mb-3">
+                    <a asp-controller="Account" asp-action="SignIn" class="btn btn-primary">
+                        Sign In
+                    </a>
+                </div>
+                <span class="font-weight-bold text-muted font-italic">
+                    Sign In to enjoy full features.
+                </span>
+            }
+        </div>
+    </div>
+</div>

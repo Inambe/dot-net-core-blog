@@ -1,0 +1,24 @@
+﻿@model IndexPostVM
+@{ 
+    ViewBag.Query = Model.Query;
+}
+
+<div class="col-md-12">
+    <h1 class="mb-0">Feed</h1>
+    <div class="row">
+        @if (Model.Posts.Count() == 0)
+        {
+            <div class="col-md-12">
+                <p class="text-center">No data.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var post in Model.Posts)
+            {
+                <partial name="_PostCard" model="post" />
+            }
+        }
+    </div>
+    <partial name="_Pagination">
+</div>

@@ -1,0 +1,27 @@
+﻿@model SignUpUserVM
+
+<div class="col-md-4 offset-md-4">
+    <h1 class="my-3">Sign Up</h1>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary mb-2">Sign Up</button>
+            <br />
+            <span class="font-italic font-weight-bold">Already have an account ?  <a asp-action="SignIn">Sign In</a></span>
+        </div>
+    </form>
+</div>

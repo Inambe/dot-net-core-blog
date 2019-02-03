@@ -1,0 +1,23 @@
+﻿@{
+    int pageSize = Constants.PostPageSize;
+    int postCount = Model.PostCount;
+
+    int paginationLen = 0;
+    if (postCount > pageSize)
+    {
+        paginationLen = postCount % pageSize > 0
+            ? (postCount / pageSize) + 1
+            : (postCount / pageSize);
+    }
+}
+@if (paginationLen > 0)
+{
+    <ul class="pagination pagination-sm">
+        @for (int i = 1; i <= paginationLen; i++)
+        {
+            <li class="page-item">
+                <a asp-route-pageIndex="@i" asp-route-query="@Model.Query" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+}

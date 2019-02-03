@@ -1,0 +1,27 @@
+﻿@model SignInUserVM
+
+<div class="col-md-4 offset-md-4">
+    <h1 class="my-3">Sign In</h1>
+    <partial name="_SignInState" model="Model.State" />
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div>
+            <input type="checkbox" asp-for="RememberMe" id="RememberMe" />
+            <label for="RememberMe">Remember Me ?</label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary mb-2">Sign In</button>
+            <br />
+            <span class="font-italic font-weight-bold">Dont't have an account ?  <a asp-action="SignUp">Sign Up</a></span>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,49 @@
+﻿@model SignInViewState?
+
+@if (Model != null)
+{
+<div class="alert alert-dismissible alert-info">
+    @switch (Model)
+    {
+        case SignInViewState.Failed:
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <span>
+                <strong>Login failed!</strong><br> try again.
+            </span>
+            break;
+
+        case SignInViewState.NotActive:
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <span>
+                <strong>Login failed!</strong><br> your account is not activated.
+            </span>
+            break;
+
+        case SignInViewState.AccountCreated:
+            <span>
+                <strong>Account Created!</strong>
+                <br>
+                you can SignIn after verifying yourself.
+                We have sent you an email.
+            </span>
+            break;
+
+        case SignInViewState.ActivationSuccess:
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <span>
+                <strong>Activated!</strong><br> your account is now activated.
+            </span>
+            break;
+        case SignInViewState.ExpiredToken:
+            <span>
+                <strong>Activation failed!</strong><br> token is expired.
+            </span>
+            break;
+        case SignInViewState.InvalidToken:
+            <span>
+                <strong>Activation failed!</strong><br> token is invalid.
+            </span>
+            break;
+    }
+</div>
+}

@@ -1,0 +1,7 @@
+﻿<h1>Home Index Authorized!</h1>
+@foreach (var a in User.Identities)
+{
+    <li>@foreach (var b in a.Claims) {
+        <ol>@b.Type : @b.Value : @b.Issuer</ol>
+    }</li>
+}

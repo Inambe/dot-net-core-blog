@@ -1,0 +1,16 @@
+{
+  "ConnectionStrings": {
+    "LocalDb": "Server=(localdb)\\MSSQLLocalDB;Database=inambe"
+  },
+  "SMTP": {
+    "Server": "",
+    "Username": "",
+    "Password": "",
+    "Port": ""
+  },
+  "Mailing": {
+    "FromName": "",
+    "FromMail": ""
+  },
+  "BaseURL": ""
+}
